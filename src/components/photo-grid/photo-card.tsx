@@ -8,6 +8,8 @@ type PhotoCardProps = {
   profileUrl: string;
   username: string;
   mainPhotoSrc: string;
+  title: string;
+  description: string;
 };
 
 export function PhotoCard({
@@ -15,6 +17,8 @@ export function PhotoCard({
   src,
   username,
   mainPhotoSrc,
+  title,
+  description,
 }: PhotoCardProps) {
   return (
     <div className={styles["photo-card"]}>
@@ -31,7 +35,11 @@ export function PhotoCard({
         </h3>
       </div>
       <div className={styles["image-container"]}>
-        <img src={mainPhotoSrc}></img>
+        <Image src={mainPhotoSrc} fill alt={`a image called ${title}`} />
+      </div>
+      <div className={styles["description"]}>
+        <h1>{title}</h1>
+        <p>{description}</p>
       </div>
     </div>
   );

@@ -10,8 +10,7 @@ export async function PhotoGrid() {
     getAllItemsFromCollection("images"),
     getSingleItemFromCollection("photo-header"),
   ]);
-  console.log("🚀 ~ file: index.tsx:13 ~ PhotoGrid ~ images:", images);
-  console.log(header);
+
   return (
     <div className={styles["cards"]}>
       {images.map(({ data }) => (
@@ -22,6 +21,8 @@ export async function PhotoGrid() {
             src={header.profileImageUrl}
             username={header.profileUsername}
             mainPhotoSrc={data.url_squared}
+            title={data.title}
+            description={data.description}
           />
         </div>
       ))}

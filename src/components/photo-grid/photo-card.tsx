@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import styles from "./styles.module.scss";
+import Link from "next/link";
 
 type PhotoCardProps = {
   src: string;
@@ -23,20 +24,28 @@ export function PhotoCard({
   return (
     <div className={styles["photo-card"]}>
       <div className={styles["header"]}>
-        <Image
-          className={styles["header-photo"]}
-          alt={`profile photo from ${username}`}
-          src={src}
-          width={50}
-          height={50}
-        />
+        <Link href={profileUrl} target="_blank">
+          <Image
+            className={styles["header-photo"]}
+            alt={`profile photo from ${username}`}
+            src={src}
+            width={50}
+            height={50}
+          />
+        </Link>
         <h3>
           <strong>{username}</strong>
         </h3>
       </div>
-      <div className={styles["image-container"]}>
-        <Image src={mainPhotoSrc} fill alt={`a image called ${title}`} />
-      </div>
+      <Link href="/princess">
+        <div className={styles["image-container"]}>
+          <Image
+            src={mainPhotoSrc}
+            fill
+            alt={`a fantasy image called ${title}`}
+          />
+        </div>
+      </Link>
       <div className={styles["description"]}>
         <h1>{title}</h1>
         <p>{description}</p>

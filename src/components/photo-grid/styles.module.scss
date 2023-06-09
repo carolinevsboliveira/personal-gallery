@@ -36,6 +36,7 @@
     align-items: center;
     height: 5rem;
     border-radius: 2rem;
+    cursor: pointer;
     h3 {
       color: #800080;
       text-transform: capitalize;
@@ -47,6 +48,7 @@
 
   .image-container {
     height: 20rem;
+    cursor: pointer;
     img {
       object-fit: cover;
       width: 100% !important;
@@ -66,9 +68,11 @@
     h1 {
       text-transform: uppercase;
       color: #800080;
+      font-weight: bold;
     }
     p {
       color: #800060;
+      font-style: italic;
       &::first-letter {
         text-transform: capitalize;
       }

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import styles from "./styles.module.scss";
 import Link from "next/link";
+import { Modal } from "../modal";
 
 type PhotoCardProps = {
   src: string;
@@ -37,19 +38,18 @@ export function PhotoCard({
           <strong>{username}</strong>
         </h3>
       </div>
-      <Link href="/princess">
-        <div className={styles["image-container"]}>
-          <Image
-            src={mainPhotoSrc}
-            fill
-            alt={`a fantasy image called ${title}`}
-          />
-        </div>
-      </Link>
+      <div className={styles["image-container"]}>
+        <Image
+          src={mainPhotoSrc}
+          fill
+          alt={`a fantasy image called ${title}`}
+        />
+      </div>
       <div className={styles["description"]}>
         <h1>{title}</h1>
         <p>{description}</p>
       </div>
+      <Modal />
     </div>
   );
 }

@@ -10,11 +10,9 @@
 .content {
   position: relative;
   height: 20vh;
-  text-align: center;
   background-color: #f288d8;
 }
 
-/* Animation */
 .parallax > use {
   animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
 }
@@ -48,8 +46,7 @@
   }
 }
 
-/* Shrinking for mobile */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .waves {
     height: 40px;
     min-height: 40px;

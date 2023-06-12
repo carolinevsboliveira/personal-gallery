@@ -26,7 +26,6 @@ export function PhotoCard({
       <div className={styles["header"]}>
         <Link href={profileUrl} target="_blank">
           <Image
-            className={styles["header-photo"]}
             alt={`profile photo from ${username}`}
             src={src}
             width={50}
@@ -37,15 +36,9 @@ export function PhotoCard({
           <strong>{username}</strong>
         </h3>
       </div>
-      <Link href="/princess">
-        <div className={styles["image-container"]}>
-          <Image
-            src={mainPhotoSrc}
-            fill
-            alt={`a fantasy image called ${title}`}
-          />
-        </div>
-      </Link>
+
+      <Image src={mainPhotoSrc} fill alt={`a fantasy image called ${title}`} />
+
       <div className={styles["description"]}>
         <h1>{title}</h1>
         <p>{description}</p>

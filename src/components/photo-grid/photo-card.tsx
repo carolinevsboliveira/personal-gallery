@@ -36,12 +36,9 @@ export function PhotoCard({
           <strong>{username}</strong>
         </h3>
       </div>
-      <Image
-        src={mainPhotoSrc}
-        width={400}
-        height={400}
-        alt={`a fantasy image called ${title}`}
-      />
+
+      <Image src={mainPhotoSrc} fill alt={`a fantasy image called ${title}`} />
+
       <div className={styles["description"]}>
         <h1>{title}</h1>
         <p>{description}</p>

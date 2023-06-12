@@ -70,3 +70,15 @@
     }
   }
 }
+
+.social-media-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  > a {
+    width: 1.5rem;
+    color: #fdb7eb;
+  }
+}

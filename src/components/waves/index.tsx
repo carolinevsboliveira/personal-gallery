@@ -1,5 +1,15 @@
 import styles from "./styles.module.scss";
-export function Wave() {
+
+type WaveProps = {
+  type?: "neutral" | "primary";
+};
+
+const fillWaveColor = {
+  neutral: "#fdb9ec",
+  primary: "#800080",
+};
+
+export function Wave({ type = "neutral" }: WaveProps) {
   return (
     <svg
       className={styles["waves"]}
@@ -7,7 +17,7 @@ export function Wave() {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       viewBox="0 24 150 28"
       preserveAspectRatio="none"
-      shape-rendering="auto"
+      shapeRendering="auto"
     >
       <defs>
         <path
@@ -34,7 +44,7 @@ export function Wave() {
           y="5"
           fill="rgba(255,255,255,0.3)"
         />
-        <use xlinkHref="#gentle-wave" x="48" y="7" fill="#fdb9ec" />
+        <use xlinkHref="#gentle-wave" x="48" y="7" fill={fillWaveColor[type]} />
       </g>
     </svg>
   );

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./styles.module.scss";
-import { Modal } from "../modal";
+
 type HeroContentProps = {
   profilePhotoUrl: string;
   title: string;
@@ -13,12 +13,14 @@ export function HeroContent({
 }: HeroContentProps) {
   return (
     <div className={styles["hero-information"]}>
-      <div className={styles["image-container"]}>
-        <Image src={profilePhotoUrl} fill alt="profile image" />
-      </div>
-      <div className={styles["typewriter-container"]}>
-        <h1>{title}</h1>
-      </div>
+      <Image
+        src={profilePhotoUrl}
+        alt="profile image"
+        height={100}
+        width={100}
+      />
+      <h1>{title}</h1>
+
       <h2>{subtitle}</h2>
     </div>
   );

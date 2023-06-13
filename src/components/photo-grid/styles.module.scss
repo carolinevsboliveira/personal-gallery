@@ -8,7 +8,9 @@
     border-radius: 2rem;
     box-shadow: #f02eaa66 0 1px 1px 1px;
     background-color: #fff;
+    transition: 0.5s;
     &:hover {
+      transform: translateY(-4px);
       box-shadow: rgba(240, 46, 170, 0.4) 2px 2px 3px 2px,
         rgba(240, 46, 170, 0.3) 4px 4px, rgba(240, 46, 170, 0.2) 6px 6px;
     }

@@ -1,0 +1,19 @@
+.footer-content {
+  height: 10vh;
+  background-color: #800080;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  > h1 {
+    color: #f288d8;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  > a {
+    text-decoration: none;
+    color: #f288d8;
+    height: 1.2rem;
+  }
+}

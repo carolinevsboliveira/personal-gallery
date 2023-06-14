@@ -5,6 +5,7 @@ import styles from "./styles.module.scss";
 import Link from "next/link";
 import { useState } from "react";
 import { Modal } from "../modal";
+import { ImageWithLoader } from "../image-with-loader";
 
 type PhotoCardProps = {
   src: string;
@@ -12,6 +13,7 @@ type PhotoCardProps = {
   username: string;
   mainPhotoSrc: string;
   title: string;
+  modalImage: string;
   description: string;
 };
 
@@ -20,46 +22,61 @@ export function PhotoCard({
   src,
   username,
   mainPhotoSrc,
+  modalImage,
   title,
   description,
 }: PhotoCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleModal = () => {
-    console.log(`chamou`);
     setIsModalOpen(!isModalOpen);
   };
 
   return (
-    <div className={styles["photo-card"]}>
-      <div className={styles["header"]}>
-        {isModalOpen && (
-          <Modal toggleModal={toggleModal} content={<h1>AHH</h1>} />
-        )}
-        <Link href={profileUrl} target="_blank">
-          <Image
-            alt={`profile photo from ${username}`}
-            src={src}
-            width={50}
-            height={50}
-          />
-        </Link>
-        <h3>
-          <strong>{username}</strong>
-        </h3>
-      </div>
+    <>
+      <div className={styles["photo-card"]}>
+        <div className={styles["header"]}>
+          <Link href={profileUrl} target="_blank">
+            <Image
+              alt={`profile photo from ${username}`}
+              src={src}
+              width={50}
+              height={50}
+            />
+          </Link>
+          <h3>
+            <strong>{username}</strong>
+          </h3>
+        </div>
 
-      <Image
-        src={mainPhotoSrc}
-        fill
-        alt={`a fantasy image called ${title}`}
-        onClick={() => toggleModal()}
-      />
+        <Image
+          src={mainPhotoSrc}
+          fill
+          alt={`a fantasy image called ${title}`}
+          onClick={() => toggleModal()}
+        />
 
-      <div className={styles["description"]}>
-        <h1>{title}</h1>
-        <p>{description}</p>
+        <div className={styles["description"]}>
+          <h1>{title}</h1>
+          <p>{description}</p>
+        </div>
       </div>
-    </div>
+      {isModalOpen && (
+        <Modal
+          toggleModal={toggleModal}
+          content={
+            <div
+              style={{ height: "70vh", display: "flex", alignItems: "center" }}
+            >
+              <ImageWithLoader
+                src={modalImage}
+                fill
+                alt={`a fantasy image called ${title}`}
+              />
+            </div>
+          }
+        />
+      )}
+    </>
   );
 }

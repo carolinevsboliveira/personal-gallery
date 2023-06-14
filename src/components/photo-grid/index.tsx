@@ -15,6 +15,7 @@ export async function PhotoGrid() {
     <div className={styles["cards"]}>
       {images.map(({ data }) => (
         <PhotoCard
+          modalImage={data.url}
           key={data.id}
           profileUrl={header.profileUrl}
           src={header.profileImageUrl}

@@ -66,7 +66,7 @@ export function PhotoCard({
           toggleModal={toggleModal}
           content={
             <div
-              style={{ height: "70vh", display: "flex", alignItems: "center" }}
+              style={{ height: "60vh", display: "flex", alignItems: "center" }}
             >
               <ImageWithLoader
                 src={modalImage}

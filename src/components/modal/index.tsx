@@ -11,7 +11,7 @@ export function Modal({ toggleModal, content }: ModalProps) {
       <div className={styles["container"]}>
         {content}
         <button type="button" onClick={toggleModal}>
-          Close this modal
+          Close
         </button>
       </div>
     </div>

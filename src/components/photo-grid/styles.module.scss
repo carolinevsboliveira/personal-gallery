@@ -4,17 +4,6 @@
   padding: 10px;
   display: grid;
   gap: 2rem;
-  .card-container {
-    border-radius: 2rem;
-    box-shadow: #f02eaa66 0 1px 1px 1px;
-    background-color: #fff;
-    transition: 0.5s;
-    &:hover {
-      transform: translateY(-4px);
-      box-shadow: rgba(240, 46, 170, 0.4) 2px 2px 3px 2px,
-        rgba(240, 46, 170, 0.3) 4px 4px, rgba(240, 46, 170, 0.2) 6px 6px;
-    }
-  }
 }
 @media (min-width: 600px) {
   .cards {
@@ -30,6 +19,14 @@
 .photo-card {
   display: flex;
   flex-direction: column;
+  border-radius: 2rem;
+  padding: 0.8rem 0;
+  box-shadow: #f02eaa66 0 1px 1px 1px;
+  background-color: #fff;
+  &:hover {
+    box-shadow: rgba(240, 46, 170, 0.4) 2px 2px 3px 2px,
+      rgba(240, 46, 170, 0.3) 4px 4px, rgba(240, 46, 170, 0.2) 6px 6px;
+  }
   .header {
     display: flex;
     flex-direction: row;
@@ -53,6 +50,7 @@
     width: 100% !important;
     position: relative !important;
     height: 20rem;
+    cursor: pointer;
   }
 
   .description {

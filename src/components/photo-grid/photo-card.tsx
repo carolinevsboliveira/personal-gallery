@@ -3,6 +3,8 @@
 import Image from "next/image";
 import styles from "./styles.module.scss";
 import Link from "next/link";
+import { useState } from "react";
+import { Modal } from "../modal";
 
 type PhotoCardProps = {
   src: string;
@@ -21,9 +23,19 @@ export function PhotoCard({
   title,
   description,
 }: PhotoCardProps) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    console.log(`chamou`);
+    setIsModalOpen(!isModalOpen);
+  };
+
   return (
     <div className={styles["photo-card"]}>
       <div className={styles["header"]}>
+        {isModalOpen && (
+          <Modal toggleModal={toggleModal} content={<h1>AHH</h1>} />
+        )}
         <Link href={profileUrl} target="_blank">
           <Image
             alt={`profile photo from ${username}`}
@@ -37,7 +49,12 @@ export function PhotoCard({
         </h3>
       </div>
 
-      <Image src={mainPhotoSrc} fill alt={`a fantasy image called ${title}`} />
+      <Image
+        src={mainPhotoSrc}
+        fill
+        alt={`a fantasy image called ${title}`}
+        onClick={() => toggleModal()}
+      />
 
       <div className={styles["description"]}>
         <h1>{title}</h1>

@@ -14,17 +14,16 @@ export async function PhotoGrid() {
   return (
     <div className={styles["cards"]}>
       {images.map(({ data }) => (
-        <div className={styles["card-container"]} key={data.id}>
-          <PhotoCard
-            key={`${data.id}0`}
-            profileUrl={header.profileUrl}
-            src={header.profileImageUrl}
-            username={header.profileUsername}
-            mainPhotoSrc={data.url_squared}
-            title={data.title}
-            description={data.description}
-          />
-        </div>
+        <PhotoCard
+          modalImage={data.url}
+          key={data.id}
+          profileUrl={header.profileUrl}
+          src={header.profileImageUrl}
+          username={header.profileUsername}
+          mainPhotoSrc={data.url_squared}
+          title={data.title}
+          description={data.description}
+        />
       ))}
     </div>
   );

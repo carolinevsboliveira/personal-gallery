@@ -18,6 +18,7 @@ export function HeroContent({
         alt="profile image"
         height={100}
         width={100}
+        role="img"
       />
       <h1>{title}</h1>
       <h2>{subtitle}</h2>

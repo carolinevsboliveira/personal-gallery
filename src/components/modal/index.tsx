@@ -7,7 +7,7 @@ type ModalProps = {
 };
 export function Modal({ toggleModal, content }: ModalProps) {
   return (
-    <div className={styles["backdrop"]}>
+    <div className={styles["backdrop"]} data-testid="modal">
       <div className={styles["container"]}>
         {content}
         <button type="button" onClick={toggleModal}>

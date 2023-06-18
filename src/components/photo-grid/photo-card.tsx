@@ -29,6 +29,7 @@ export function PhotoCard({
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleModal = () => {
+    console.log("chamado");
     setIsModalOpen(!isModalOpen);
   };
 
@@ -36,7 +37,11 @@ export function PhotoCard({
     <>
       <div className={styles["photo-card"]}>
         <div className={styles["header"]}>
-          <Link href={profileUrl} target="_blank">
+          <Link
+            href={profileUrl}
+            target="_blank"
+            aria-label="Link that redirects to Instagram profile."
+          >
             <Image
               alt={`profile photo from ${username}`}
               src={src}
@@ -49,11 +54,12 @@ export function PhotoCard({
           </h3>
         </div>
 
-        <Image
+        <ImageWithLoader
           src={mainPhotoSrc}
           fill
           alt={`a fantasy image called ${title}`}
           onClick={() => toggleModal()}
+          aria-label={`a clickable image that opens the artwork named ${title} in full size.`}
         />
 
         <div className={styles["description"]}>

@@ -13,14 +13,12 @@ export function ImageWithLoader(props: ImageProps) {
       {displayLoading && (
         <div className={styles["loader"]} data-testid="loader" />
       )}
-      <figure>
-        <Image
-          {...props}
-          alt={props.alt}
-          style={{ visibility: displayLoading ? "hidden" : "visible" }}
-          onLoadingComplete={() => setDisplayLoading(false)}
-        />
-      </figure>
+      <Image
+        {...props}
+        alt={props.alt}
+        style={{ display: displayLoading ? "none" : "block" }}
+        onLoadingComplete={() => setDisplayLoading(false)}
+      />
     </>
   );
 }

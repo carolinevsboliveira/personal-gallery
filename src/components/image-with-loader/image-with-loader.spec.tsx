@@ -13,10 +13,10 @@ describe("<ImageWithLoader />", () => {
 
     expect(screen.getByTestId("loader")).toBeInTheDocument();
 
-    fireEvent.load(screen.getByRole("figure", { hidden: true }));
+    fireEvent.load(screen.getByRole("img", { hidden: true }));
 
-    expect(await screen.findByRole("figure", { hidden: true })).toHaveStyle(
-      "visibility: visible"
+    expect(await screen.findByRole("img", { hidden: true })).toHaveStyle(
+      "display: block"
     );
   });
 });

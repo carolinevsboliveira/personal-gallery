@@ -5,7 +5,7 @@
   display: grid;
   gap: 2rem;
 }
-@media (min-width: 600px) {
+@media (min-width: 500px) {
   .cards {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -32,10 +32,10 @@
   .header {
     display: flex;
     flex-direction: row;
-    padding: 0 0.5rem;
+    padding: 0.5rem;
     gap: 1rem;
     align-items: center;
-    height: 5rem;
+    height: 3rem;
 
     cursor: pointer;
     h3 {

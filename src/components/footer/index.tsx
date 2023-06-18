@@ -13,7 +13,7 @@ export function Footer() {
           href="https://github.com/carolinevsboliveira/personal-gallery"
           target="_blank"
         >
-          <p>Visit this repo on Github</p>
+          <p>&#8594; Visit this repo on Github &#8592;</p>
         </Link>
       </div>
     </footer>

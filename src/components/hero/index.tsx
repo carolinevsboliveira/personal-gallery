@@ -25,8 +25,8 @@ export async function Hero() {
       </div>
       <div className={styles["social-media-list"]}>
         {socialNetwork.map(({ data, key }) => (
-          <Link href={data.url} key={key}>
-            <Icon variant={data.name} />
+          <Link href={data.url} key={key} role="link">
+            <Icon use={data.name} />
           </Link>
         ))}
       </div>

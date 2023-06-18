@@ -9,15 +9,25 @@ import {
 import type { IconDefinition } from "@fortawesome/free-brands-svg-icons";
 
 interface IconProps extends Omit<FontAwesomeIconProps, "icon"> {
-  variant: "linkedin" | "instagram" | "github";
+  use: "linkedin" | "instagram" | "github";
 }
 
-const mapIcons: Record<IconProps["variant"], IconDefinition> = {
+const mapIcons: Record<IconProps["use"], IconDefinition> = {
   linkedin: faLinkedin,
   instagram: faInstagram,
   github: faGithub,
 };
 
 export function Icon(props: IconProps) {
-  return <FontAwesomeIcon {...props} icon={mapIcons[props.variant]} />;
+  return (
+    <>
+      {mapIcons[props.use] && (
+        <FontAwesomeIcon
+          {...props}
+          icon={mapIcons[props.use]}
+          data-testid={`icon of ${props.use}`}
+        />
+      )}
+    </>
+  );
 }

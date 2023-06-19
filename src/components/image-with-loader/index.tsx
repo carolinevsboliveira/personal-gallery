@@ -16,7 +16,7 @@ export function ImageWithLoader(props: ImageProps) {
       <Image
         {...props}
         alt={props.alt}
-        style={{ display: displayLoading ? "none" : "block" }}
+        style={{ visibility: displayLoading ? "hidden" : "visible" }}
         onLoadingComplete={() => setDisplayLoading(false)}
       />
     </>

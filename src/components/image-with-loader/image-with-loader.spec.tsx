@@ -16,7 +16,7 @@ describe("<ImageWithLoader />", () => {
     fireEvent.load(screen.getByRole("img", { hidden: true }));
 
     expect(await screen.findByRole("img", { hidden: true })).toHaveStyle(
-      "display: block"
+      "visibility: visible"
     );
   });
 });

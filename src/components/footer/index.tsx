@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Wave } from "../waves";
 import styles from "./styles.module.scss";
-import { Icon } from "../icon";
 
 export function Footer() {
   return (

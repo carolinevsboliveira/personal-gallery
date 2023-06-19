@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import styles from "./styles.module.scss";
-import Link from "next/link";
-import { useState } from "react";
-import { Modal } from "../modal";
 import { ImageWithLoader } from "../image-with-loader";
+import Link from "next/link";
+import { Modal } from "../modal";
+import styles from "./styles.module.scss";
+import { useState } from "react";
 
 type PhotoCardProps = {
   src: string;
@@ -29,7 +29,6 @@ export function PhotoCard({
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleModal = () => {
-    console.log("chamado");
     setIsModalOpen(!isModalOpen);
   };
 

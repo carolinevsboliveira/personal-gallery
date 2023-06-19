@@ -1,9 +1,9 @@
 import {
-  getSingleItemFromCollection,
   getAllItemsFromCollection,
+  getSingleItemFromCollection,
 } from "~/firebase/queries";
-import styles from "./styles.module.scss";
 import { PhotoCard } from "./photo-card";
+import styles from "./styles.module.scss";
 
 export async function PhotoGrid() {
   const [images, header] = await Promise.all([

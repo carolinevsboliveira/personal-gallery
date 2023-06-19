@@ -1,9 +1,8 @@
 import { render, screen, waitFor } from "@testing-library/react";
+import { Modal } from "../modal";
+import { PhotoGrid } from "./index";
 import userEvent from "@testing-library/user-event";
 import { vi } from "vitest";
-
-import { PhotoGrid } from "./index";
-import { Modal } from "../modal";
 
 vi.mock("../../firebase/queries", () => ({
   getSingleItemFromCollection: vi.fn().mockResolvedValue({

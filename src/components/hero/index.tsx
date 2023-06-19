@@ -3,10 +3,10 @@ import {
   getSingleItemFromCollection,
 } from "~/firebase/queries";
 import { HeroContent } from "./content";
-import styles from "./styles.module.scss";
-import { Wave } from "../waves";
-import Link from "next/link";
 import { Icon } from "../icon";
+import Link from "next/link";
+import { Wave } from "../waves";
+import styles from "./styles.module.scss";
 
 export async function Hero() {
   const [details, socialNetwork] = await Promise.all([

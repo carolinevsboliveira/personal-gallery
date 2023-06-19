@@ -1,11 +1,10 @@
-import type { FontAwesomeIconProps } from "@fortawesome/react-fontawesome";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import {
-  faLinkedin,
-  faInstagram,
   faGithub,
+  faInstagram,
+  faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { FontAwesomeIconProps } from "@fortawesome/react-fontawesome";
 import type { IconDefinition } from "@fortawesome/free-brands-svg-icons";
 
 interface IconProps extends Omit<FontAwesomeIconProps, "icon"> {

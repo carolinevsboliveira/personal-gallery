@@ -1,7 +1,7 @@
-import { Hero } from "~/components/hero";
 import "./globals.css";
-import { Inter } from "next/font/google";
 import { Footer } from "~/components/footer";
+import { Hero } from "~/components/hero";
+import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 

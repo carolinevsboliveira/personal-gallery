@@ -1,10 +1,6 @@
-import { vi } from "vitest";
-import { Hero } from "./index";
-import {
-  getSingleItemFromCollection,
-  getAllItemsFromCollection,
-} from "../../firebase/queries";
 import { render, screen } from "@testing-library/react";
+import { Hero } from "./index";
+import { vi } from "vitest";
 
 vi.mock("../../firebase/queries", () => ({
   getSingleItemFromCollection: vi.fn().mockResolvedValue({

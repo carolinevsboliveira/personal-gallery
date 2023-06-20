@@ -1,3 +1,14 @@
+.loader-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-container-hidden {
+  display: none;
+}
+
 .loader {
   width: 48px;
   height: 48px;

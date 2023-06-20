@@ -45,7 +45,7 @@ describe("<PhotoGrid />", () => {
     render(await PhotoGrid());
 
     userEvent.click(
-      screen.getByLabelText(
+      await screen.findByLabelText(
         "a clickable image that opens the artwork named title 1 in full size."
       )
     );

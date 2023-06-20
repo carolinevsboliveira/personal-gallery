@@ -70,15 +70,12 @@ export function PhotoCard({
         <Modal
           toggleModal={toggleModal}
           content={
-            <div
-              style={{ height: "60vh", display: "flex", alignItems: "center" }}
-            >
-              <ImageWithLoader
-                src={modalImage}
-                fill
-                alt={`a fantasy image called ${title}`}
-              />
-            </div>
+            <ImageWithLoader
+              reservedHeight="60vh"
+              src={modalImage}
+              fill
+              alt={`a fantasy image called ${title}`}
+            />
           }
         />
       )}

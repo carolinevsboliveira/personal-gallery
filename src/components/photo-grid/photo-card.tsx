@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Modal } from "../modal";
 import styles from "./styles.module.scss";
 import { useState } from "react";
+import { useWindowWidth } from "~/hooks/use-window-width";
 
 type PhotoCardProps = {
   src: string;
@@ -27,6 +28,7 @@ export function PhotoCard({
   description,
 }: PhotoCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const width = useWindowWidth();
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
@@ -47,10 +49,10 @@ export function PhotoCard({
               width={50}
               height={50}
             />
+            <h3>
+              <strong>{username}</strong>
+            </h3>
           </Link>
-          <h3>
-            <strong>{username}</strong>
-          </h3>
         </div>
 
         <ImageWithLoader
@@ -66,7 +68,7 @@ export function PhotoCard({
           <p>{description}</p>
         </div>
       </div>
-      {isModalOpen && (
+      {isModalOpen && width > 600 && (
         <Modal
           toggleModal={toggleModal}
           content={

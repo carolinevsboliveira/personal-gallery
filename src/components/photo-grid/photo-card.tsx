@@ -71,7 +71,7 @@ export function PhotoCard({
           toggleModal={toggleModal}
           content={
             <ImageWithLoader
-              reservedHeight="70vh"
+              reservedHeight="60vh"
               src={modalImage}
               fill
               alt={`a fantasy image called ${title}`}

@@ -25,10 +25,11 @@
     flex-direction: column;
     gap: 2rem;
     padding: 2rem;
+    height: 80vh;
 
     img {
       position: relative !important;
-      max-height: 60vh !important;
+      max-height: 70vh !important;
       object-fit: contain;
     }
 

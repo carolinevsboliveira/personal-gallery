@@ -6,7 +6,6 @@ import Link from "next/link";
 import { Modal } from "../modal";
 import styles from "./styles.module.scss";
 import { useState } from "react";
-import { useWindowWidth } from "~/hooks/use-window-width";
 
 type PhotoCardProps = {
   src: string;
@@ -16,6 +15,7 @@ type PhotoCardProps = {
   title: string;
   modalImage: string;
   description: string;
+  modalAllowed?: boolean;
 };
 
 export function PhotoCard({
@@ -26,9 +26,9 @@ export function PhotoCard({
   modalImage,
   title,
   description,
+  modalAllowed,
 }: PhotoCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const width = useWindowWidth();
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
@@ -68,7 +68,7 @@ export function PhotoCard({
           <p>{description}</p>
         </div>
       </div>
-      {isModalOpen && width > 600 && (
+      {isModalOpen && modalAllowed && (
         <Modal
           toggleModal={toggleModal}
           content={

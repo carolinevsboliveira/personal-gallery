@@ -15,6 +15,7 @@ type PhotoCardProps = {
   title: string;
   modalImage: string;
   description: string;
+  modalAllowed?: boolean;
 };
 
 export function PhotoCard({
@@ -25,6 +26,7 @@ export function PhotoCard({
   modalImage,
   title,
   description,
+  modalAllowed,
 }: PhotoCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -47,10 +49,10 @@ export function PhotoCard({
               width={50}
               height={50}
             />
+            <h3>
+              <strong>{username}</strong>
+            </h3>
           </Link>
-          <h3>
-            <strong>{username}</strong>
-          </h3>
         </div>
 
         <ImageWithLoader
@@ -66,7 +68,7 @@ export function PhotoCard({
           <p>{description}</p>
         </div>
       </div>
-      {isModalOpen && (
+      {isModalOpen && modalAllowed && (
         <Modal
           toggleModal={toggleModal}
           content={
@@ -75,6 +77,7 @@ export function PhotoCard({
               src={modalImage}
               fill
               alt={`a fantasy image called ${title}`}
+              style={{ cursor: modalAllowed ? "pointer" : "none" }}
             />
           }
         />

@@ -5,7 +5,7 @@
   display: grid;
   gap: 2rem;
 }
-@media (min-width: 500px) {
+@media (min-width: 600px) {
   .cards {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -37,10 +37,16 @@
     align-items: center;
     height: 3rem;
 
-    cursor: pointer;
     h3 {
       color: #800080;
       text-transform: capitalize;
+    }
+    > a {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
     }
     > a > img {
       border-radius: 50%;
@@ -52,7 +58,6 @@
     width: 100% !important;
     position: relative !important;
     height: 20rem;
-    cursor: pointer;
   }
 
   .description {

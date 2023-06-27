@@ -57,7 +57,7 @@ describe("<PhotoGrid />", () => {
 
     render(<Modal toggleModal={toggleModalMock} content={<h1>Mock</h1>} />);
 
-    userEvent.click(screen.getByRole("button", { name: "Close" }));
+    userEvent.click(await screen.findByRole("button", { name: "Close" }));
 
     await waitFor(() => expect(toggleModalMock).toHaveBeenCalled());
   });

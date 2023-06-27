@@ -77,6 +77,7 @@ export function PhotoCard({
               src={modalImage}
               fill
               alt={`a fantasy image called ${title}`}
+              style={{ cursor: modalAllowed ? "pointer" : "none" }}
             />
           }
         />
